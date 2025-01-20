@@ -152,7 +152,7 @@
                     <execution>
                         <configuration>
                             <pluginParameter>
-                                jakarta_omit
+                                jakarta_omit,@generated=omit
                             </pluginParameter>
                         </configuration>
                         <goals>
