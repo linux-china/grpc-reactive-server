@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 @Service
 public class GrpcServerReactiveService extends ReactorSimpleGrpc.SimpleImplBase {
 
-	private static Log log = LogFactory.getLog(GrpcServerReactiveService.class);
+	private static final Log log = LogFactory.getLog(GrpcServerReactiveService.class);
 
 	@Override
 	public Mono<HelloReply> sayHello(HelloRequest req) {
