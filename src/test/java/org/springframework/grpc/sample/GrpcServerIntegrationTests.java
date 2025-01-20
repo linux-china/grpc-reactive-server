@@ -49,7 +49,7 @@ class GrpcServerIntegrationTests {
 		@Test
 		void servesResponseToClientWithAnyIPv4AddressAndRandomPort(@Autowired GrpcChannelFactory channels,
 				@LocalGrpcPort int port) {
-			assertThatResponseIsServedToChannel(channels.createChannel("0.0.0.0:" + port).build());
+			assertThatResponseIsServedToChannel(channels.createChannel("0.0.0.0:" + port));
 		}
 
 	}
@@ -61,7 +61,7 @@ class GrpcServerIntegrationTests {
 		@Test
 		void servesResponseToClientWithAnyIPv4AddressAndRandomPort(@Autowired GrpcChannelFactory channels,
 				@LocalGrpcPort int port) {
-			assertThatResponseIsServedToChannel(channels.createChannel("0.0.0.0:" + port).build());
+			assertThatResponseIsServedToChannel(channels.createChannel("0.0.0.0:" + port));
 		}
 
 	}
@@ -73,7 +73,7 @@ class GrpcServerIntegrationTests {
 		@Test
 		void servesResponseToClientWithLocalhostAndRandomPort(@Autowired GrpcChannelFactory channels,
 				@LocalGrpcPort int port) {
-			assertThatResponseIsServedToChannel(channels.createChannel("127.0.0.1:" + port).build());
+			assertThatResponseIsServedToChannel(channels.createChannel("127.0.0.1:" + port));
 		}
 
 	}
@@ -86,7 +86,7 @@ class GrpcServerIntegrationTests {
 
 		@Test
 		void servesResponseToClientWithConfiguredChannel(@Autowired GrpcChannelFactory channels) {
-			assertThatResponseIsServedToChannel(channels.createChannel("test-channel").build());
+			assertThatResponseIsServedToChannel(channels.createChannel("test-channel"));
 		}
 
 	}
@@ -98,7 +98,7 @@ class GrpcServerIntegrationTests {
 
 		@Test
 		void clientChannelWithUnixDomain(@Autowired GrpcChannelFactory channels) {
-			assertThatResponseIsServedToChannel(channels.createChannel("unix:unix-test-channel").build());
+			assertThatResponseIsServedToChannel(channels.createChannel("unix:unix-test-channel"));
 		}
 
 	}
@@ -114,7 +114,7 @@ class GrpcServerIntegrationTests {
 
 		@Test
 		void clientChannelWithSsl(@Autowired GrpcChannelFactory channels) {
-			assertThatResponseIsServedToChannel(channels.createChannel("test-channel").build());
+			assertThatResponseIsServedToChannel(channels.createChannel("test-channel"));
 		}
 
 	}

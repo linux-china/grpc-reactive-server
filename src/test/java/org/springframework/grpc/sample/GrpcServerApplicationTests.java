@@ -21,7 +21,7 @@ import org.springframework.test.annotation.DirtiesContext;
 @SpringBootTest(properties = "spring.grpc.server.port=0")
 public class GrpcServerApplicationTests {
 
-	private static Log log = LogFactory.getLog(GrpcServerApplicationTests.class);
+	private static final Log log = LogFactory.getLog(GrpcServerApplicationTests.class);
 
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(GrpcServerApplication.class, ExtraConfiguration.class).profiles("ssl").run(args);
@@ -49,7 +49,7 @@ public class GrpcServerApplicationTests {
 		@Bean
 		@Lazy
 		SimpleGrpc.SimpleBlockingStub stub(GrpcChannelFactory channels, @LocalGrpcPort int port) {
-			return SimpleGrpc.newBlockingStub(channels.createChannel("0.0.0.0:" + port).build());
+			return SimpleGrpc.newBlockingStub(channels.createChannel("0.0.0.0:" + port));
 		}
 
 	}
